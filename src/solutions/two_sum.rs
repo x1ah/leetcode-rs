@@ -2,7 +2,6 @@ use std::collections::HashMap;
 
 struct Solution {}
 
-
 impl Solution {
     pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
         let mut index: HashMap<i32, i32> = HashMap::new();
@@ -22,7 +21,6 @@ impl Solution {
     }
 }
 
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -32,25 +30,32 @@ mod tests {
         target: i32,
         solution: Vec<i32>,
     }
-    
+
     #[test]
     fn tests() {
-        let testcases = vec![TestCase{
-            input: vec![2, 7, 11, 15],
-            target: 9,
-            solution: vec![0, 1],
-        }, TestCase{
-            input: vec![3, 2, 4],
-            target: 6,
-            solution: vec![1, 2]
-        }, TestCase{
-            input: vec![3, 3],
-            target: 6,
-            solution: vec![0, 1]
-        }];
+        let testcases = vec![
+            TestCase {
+                input: vec![2, 7, 11, 15],
+                target: 9,
+                solution: vec![0, 1],
+            },
+            TestCase {
+                input: vec![3, 2, 4],
+                target: 6,
+                solution: vec![1, 2],
+            },
+            TestCase {
+                input: vec![3, 3],
+                target: 6,
+                solution: vec![0, 1],
+            },
+        ];
 
         for testcase in testcases.iter() {
-            assert_eq!(Solution::two_sum(testcase.input.clone(), testcase.target), testcase.solution);
+            assert_eq!(
+                Solution::two_sum(testcase.input.clone(), testcase.target),
+                testcase.solution
+            );
         }
     }
 }
